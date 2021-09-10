@@ -1,7 +1,6 @@
 import "./App.css";
 import styled from "styled-components";
 import { ReactComponent as Logo } from "./logo.svg";
-interface Props {}
 
 const Container = styled.div`
   display: flex;
