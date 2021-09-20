@@ -10,6 +10,10 @@ const Container = styled.div`
   width: 100%;
 `;
 
+const SvgLogo = styled(Logo)`
+  width: 100%;
+`;
+
 const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,7 +21,7 @@ const LogoContainer = styled.div`
   align-items: center;
   font-size: 2rem;
   p {
-    margin-top: -5rem;
+    margin-top: -6rem;
     font-family: Arial;
     font-weight: 100;
   }
@@ -31,7 +35,7 @@ function App() {
     <div className="App">
       <Container>
         <LogoContainer>
-          <Logo />
+          <SvgLogo />
           <p>Coming Soon</p>
         </LogoContainer>
       </Container>
