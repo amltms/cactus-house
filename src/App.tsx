@@ -1,45 +1,33 @@
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
-import { ReactComponent as Logo } from "./logo.svg";
+import { Nav } from "./components/Nav";
+import { Home } from "./components/home/Home";
+import { About } from "./components/about/About";
+import { Contact } from "./components/contact/Contact";
 
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-`;
-
-const SvgLogo = styled(Logo)`
-  width: 100%;
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  p {
-    margin-top: -6rem;
-    font-family: Arial;
-    font-weight: 100;
-  }
-  svg {
-    height: 20rem;
-  }
+  padding: 10rem 10vw 0 10vw;
 `;
 
 function App() {
   return (
-    <div className="App">
-      <Container>
-        <LogoContainer>
-          <SvgLogo />
-          <p>Coming Soon</p>
-        </LogoContainer>
-      </Container>
-    </div>
+    <Router>
+      <Nav />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Container>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+        </Container>
+      </Switch>
+    </Router>
   );
 }
 
